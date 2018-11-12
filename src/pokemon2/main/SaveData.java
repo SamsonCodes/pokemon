@@ -22,7 +22,7 @@ public class SaveData
     public void saveData(ArrayList<String> data)
     {
         try{
-            PrintWriter writer = new PrintWriter("pokemonsave.txt", "UTF-8");
+            PrintWriter writer = new PrintWriter(Rpg.SAVE_PATH + "\\pokemonsave.txt", "UTF-8");
             for(String line: data)
             {
                 writer.println(line);
@@ -39,7 +39,7 @@ public class SaveData
     {
         try 
         { 
-            FileReader fileReader = new FileReader("pokemonsave.txt");
+            FileReader fileReader = new FileReader(Rpg.SAVE_PATH + "\\pokemonsave.txt");
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             String line;
             while((line = bufferedReader.readLine()) != null) 
@@ -58,7 +58,7 @@ public class SaveData
         String dataRequested = "";
         try 
         { 
-            FileReader fileReader = new FileReader("pokemonsave.txt");
+            FileReader fileReader = new FileReader(Rpg.SAVE_PATH + "\\pokemonsave.txt");
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             String line;
             int currentLine = 0;
@@ -87,7 +87,7 @@ public class SaveData
         ArrayList<String> collectedData = new ArrayList<>();
         try 
         { 
-            FileReader fileReader = new FileReader("pokemonsave.txt");
+            FileReader fileReader = new FileReader(Rpg.SAVE_PATH + "\\pokemonsave.txt");
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             String line;
             while((line = bufferedReader.readLine()) != null) 
@@ -108,7 +108,7 @@ public class SaveData
         ArrayList<String> collectedData = new ArrayList<>();
         try 
         { 
-            FileReader fileReader = new FileReader("pokemonsave.txt");
+            FileReader fileReader = new FileReader(Rpg.SAVE_PATH + "\\pokemonsave.txt");
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             String line;
             boolean beginFound = false;
@@ -141,7 +141,7 @@ public class SaveData
     {
         try 
         { 
-            FileReader fileReader = new FileReader("pokemonsave.txt");
+            FileReader fileReader = new FileReader(Rpg.SAVE_PATH + "\\pokemonsave.txt");
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             String line;
             while((line = bufferedReader.readLine()) != null) 

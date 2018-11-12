@@ -8,6 +8,7 @@ package pokemon2.main;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
+import java.io.File;
 import pokemon2.states.MenuState;
 import pokemon2.states.BattleState;
 import pokemon2.states.WorldState;
@@ -34,7 +35,8 @@ import pokemon2.world.Tile;
 
 public class Rpg implements Runnable
 {
-    public final String TITLE = "Pokemon";
+    public final String TITLE = "Pokemon"; 
+    public final static String SAVE_PATH = "C:\\PokemonSaveData";
     public final int WIDTH = 600, HEIGHT = 400;
     public final static String MENU = "Menu", WORLD = "World", BATTLE = "Battle";
     private StateMachine stateMachine;
@@ -72,6 +74,7 @@ public class Rpg implements Runnable
     
     private void init()
     {
+        createDirectory(SAVE_PATH);
         Assets.init();          
         Tile.init();
         Data.init();
@@ -227,6 +230,29 @@ public class Rpg implements Runnable
         
         bs.show();
         g.dispose();
+    }
+    
+    private boolean createDirectory(String dir)
+    {
+        File file = new File(dir);
+        if (!file.exists())
+        {
+            if (file.mkdir())
+            {
+                System.out.println("Directory is created!");
+                return true;
+            }
+            else
+            {
+                System.out.println("Failed to create directory!");
+                return false;
+            }
+        }
+        else
+        {
+            System.out.println("Directory already exists!");
+            return true;
+        }
     }
     
     public StateMachine getStateMachine() {
