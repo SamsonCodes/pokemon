@@ -1,7 +1,0 @@
-Pokemon to do
-- add cutscenes
-- improve battle animations
-- improve healthbars
-- improve menu look
-- improve button text and screen filling
-- make better worlds, trainers, npcs, story etc.

@@ -68,7 +68,7 @@ public class Rpg implements Runnable
     private BackgroundMusic backgroundMusic;
     
     private TrainerNpc opponent;
-    private SaveData saveData;
+    private SaveHandler saveHandler;
     
     Rpg(){}
     
@@ -85,7 +85,7 @@ public class Rpg implements Runnable
         
         messageBox = new MessageBox(handler, Color.WHITE);
         
-        saveData = new SaveData();
+        saveHandler = new SaveHandler();
         
         player = new Player(handler, 0, 0, "Player");
         
@@ -308,9 +308,9 @@ public class Rpg implements Runnable
         return opponent;
     }
     
-    public SaveData getSaveData()
+    public SaveHandler getSaveHandler()
     {
-        return saveData;
+        return saveHandler;
     }
     
     public BackgroundMusic getBackgroundMusic()
