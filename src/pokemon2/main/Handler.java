@@ -167,9 +167,9 @@ public class Handler
         this.spawnY = spawnY;
     }
     
-    public SaveData getSaveData()
+    public SaveHandler getSaveData()
     {
-        return rpg.getSaveData();
+        return rpg.getSaveHandler();
     }
     
     public boolean isLoadFromSave()
